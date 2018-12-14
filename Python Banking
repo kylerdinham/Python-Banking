@@ -1,0 +1,24 @@
+class Account():
+
+    def __init__(self,owner,balance=0):
+        
+        self.owner = owner
+        self.balance = balance
+        
+    def deposit(self,amount):
+            
+        self.balance = self.balance + amount
+        print("Deposit accepted. Your current balance is {}".format(self.balance))
+                 
+    def withdraw(self,amount):
+        
+        self.balance = self.balance - amount
+        
+        if self.balance < 0:
+            print("I'm sorry, that amount exceeds your balance of {}".format(self.balance))
+        
+        else:
+            print("Withdrawal accepted. Your current balance is {}".format(self.balance))
+            
+    def __str__(self):
+        return "Owner is: {} \nAccount balance is: {}".format(self.owner,self.balance)
